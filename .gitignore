@@ -1,0 +1,19 @@
+# Ignore virtual environments
+venv/
+
+# Ignore Python cache
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+*.joblib
+*.h5
+
+
+# Ignore model checkpoints if too big
+*.joblib
+*.pkl
+*.h5
+
+
