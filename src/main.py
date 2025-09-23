@@ -1,10 +1,16 @@
 from fastapi import FastAPI
 import joblib
 import pandas as pd
+import os
 
-model = joblib.load('/workspaces/churn-prediction/models/churn_model.joblib')
-scaler = joblib.load('/workspaces/churn-prediction/models/scaler.joblib')
-columns = joblib.load("models/columns.joblib")
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MODEL_PATH = os.path.join(BASE_DIR, "models", "churn_model.joblib")
+SCALER_PATH = os.path.join(BASE_DIR, "models", "scaler.joblib")
+COLUMN_PATH = os.path.join(BASE_DIR, "models", "columns.joblib")
+
+model = joblib.load(MODEL_PATH)
+scaler = joblib.load(SCALER_PATH)
+column = joblib.load(COLUMN_PATH)
 
 app = FastAPI()
 
@@ -13,7 +19,7 @@ def predict(features: dict):
     df = pd.DataFrame([features])
     
     # Ensure columns are aligned to training order
-    df = df.reindex(columns=columns, fill_value=0)
+    df = df.reindex(columns=column, fill_value=0)
     
     # Scale numeric columns (must be in same order as training)
     numeric_cols = ["SeniorCitizen", "tenure", "MonthlyCharges", "TotalCharges"]
