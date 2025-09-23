@@ -34,7 +34,7 @@ This project demonstrates the full ML lifecycle — from data preprocessing and 
 ---
 
 ## 📂 Project Structure
-
+```
 churn-prediction/
 │
 ├── data/ # Dataset
@@ -52,7 +52,7 @@ churn-prediction/
 ├── streamlit_app.py # Streamlit frontend
 ├── requirements.txt # Dependencies
 └── README.md # Project documentation
-
+```
 ---
 
 ## 🧑‍💻 How to Run Locally
@@ -62,15 +62,19 @@ churn-prediction/
     git clone https://github.com/Legacywave1/churn-prediction.git
     ch churn-prediction
 2. Create and activate environment
+   ```bash
    python -m venv venv
    source venv/bin/activate #MAC/Linus
    venv/Scripts/activate #Windows
 3. Install dependencies
+    ```bash
    pip install -r requirements.txt
 4. Run Fast API
+    ```bash
    uvicorn src.main:app --reload
    API will be available at: http://127.0.0.1:8000/docs
 5. Run streamlit app
+   ```bash
    streamlit run streamlit_app.py
    
 ## 🌐 Live Demo
@@ -78,7 +82,9 @@ churn-prediction/
 * Streamlit(Hugging Face Spaces): https://huggingface.co/spaces/Cyprian121/Churn-Prediction
 
 ## 🧪 Example Prediction
-Request(JSON)
+Request(JSON):
+
+  ```bash
 {
   "SeniorCitizen": 0.0,
   "tenure": 1.0,
@@ -97,10 +103,14 @@ Request(JSON)
   "Contract_Month-to-month": 1.0,
   "PaymentMethod_Electronic check": 1.0
 }
-Response(JSON){
+```
+Response(JSON)
+```bash
+{
   "churn_prediction": 1,
   "churn_probability": 0.86
 }
+```
 
 ## 📊 Explainability (SHAP)
 The model highlights key features influencing churn such as:
@@ -108,7 +118,11 @@ The model highlights key features influencing churn such as:
 * Monthly charges
 * Tenure
 * Internet service type
-  <img width="798" height="940" alt="SHAP" src="https://github.com/user-attachments/assets/759c4f09-a93c-4db2-adb0-aea4d23bfe76" />
+
+
+  <img width="798" height="940" alt="SHAP" src="https://github.com/user-attachments/assets/3fbf61df-e9e3-4c2f-b3f3-d5c01f4a4bad" />
+
+
 
 ## 📄 Resume Highlights
 * Built an end-to-end Customer Churn Prediction System using Python, scikit-learn, and SHAP.
@@ -121,3 +135,4 @@ The model highlights key features influencing churn such as:
 * Hugging Face Spaces for hosting Streamlit apps.
 * Render for free API deployment.
 ---
+
