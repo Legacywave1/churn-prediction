@@ -1,7 +1,7 @@
 # 📊 Customer Churn Prediction
 
 An end-to-end machine learning application that predicts whether a customer will churn (leave) or stay, based on their service usage and demographic data.  
-This project demonstrates the full ML lifecycle — from data preprocessing and modeling to deployment and interactive frontend.  
+This project demonstrates the full ML lifecycle from data preprocessing and modeling to deployment and interactive frontend.  
 
 
 <img width="1777" height="901" alt="Screenshot 2025-09-23 231254" src="https://github.com/user-attachments/assets/f1e8ca3e-d566-4773-a72e-d93a26636a95" />
@@ -135,4 +135,5 @@ The model highlights key features influencing churn such as:
 * Hugging Face Spaces for hosting Streamlit apps.
 * Render for free API deployment.
 ---
+
 
